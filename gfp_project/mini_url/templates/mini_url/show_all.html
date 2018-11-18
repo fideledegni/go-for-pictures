@@ -1,0 +1,18 @@
+<h1>Liste des URL racourcies</h1>
+<ul>
+	{% for url in urls %}
+	<li>
+		{{url.longURL}} via <a href="http://{{request.get_host}}{% url 'visit' url.code %}"> {{request.get_host}}{% url 'visit' url.code %} </a>
+		{% if url.pseudo_auteur %}
+		par {{url.pseudo_auteur}} 
+		{% else %}
+		
+		{% endif %}
+
+		({{url.nb_access}} accès) 
+	</li>
+	{% empty %}
+    <p>Il n'y a pas encore d'URL racourcie</p>
+	{% endfor %}
+</ul>
+

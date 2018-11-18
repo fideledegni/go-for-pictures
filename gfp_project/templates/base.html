@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+   <link rel="stylesheet" href="/media/css/style.css" />
+   <title>{% block title %}Le blog de Go For Pictures{% endblock %}</title>
+</head>
+
+<body>
+<header>Go For Pictures</header>
+    <nav>
+       {% block nav %}
+       <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/blog/">Blog</a></li>
+            <li><a href="/contact/">Contact</a></li>
+       </ul>
+       {% endblock %}
+   </nav>
+   <section id="content">
+       {% block content %}{% endblock %}
+   </section>
+<footer>&copy; Go For Pictures</footer>
+</body>
+
+</html>

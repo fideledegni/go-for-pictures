@@ -1,0 +1,14 @@
+
+<h1>Racourcir une URL</h1>
+{% if sauvegarde %}
+    <p style="color: red">L'URL a été racourcie et sauvegardée.</p>
+{% endif %}
+<p>
+    <form method="post" action="">
+       {% csrf_token %}
+       {{ form.as_p }}
+       <input type="submit" value="Valider"/>
+    </form>
+</p>
+
+<p style="color: green"><a href="http://{{request.get_host}}{% url 'show_all' %}">Voir la liste des URL racourcies</a></p>
